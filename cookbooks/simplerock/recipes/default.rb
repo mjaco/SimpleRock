@@ -429,8 +429,9 @@ end
 end
 
 #Start bro
+#/opt/bro/bin/broctl check && 
 execute 'start_bro' do
-  command '/opt/bro/bin/broctl install; /opt/bro/bin/broctl check && /opt/bro/bin/broctl start'
+  command '/opt/bro/bin/broctl install; /opt/bro/bin/broctl start'
   action :nothing
   notifies :write, "log[branding]", :delayed
 end
